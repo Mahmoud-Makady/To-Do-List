@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="card shadow-lg p-4" style="width: 100%; max-width: 600px">
+        <div class="card-body">
+          <h1 class="card-title text-center text-success mb-4">TO DO List</h1>
+          <form>
+            <div class="mb-3">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                class="form-control"
+                placeholder="Todo Title"
+                oninput="titleValid()"
+              />
+              <p class="error d-none" id="titleError">
+                Please add at least 6 characters
+              </p>
+            </div>
+            <div class="mb-3">
+              <textarea
+                id="description"
+                name="description"
+                class="form-control"
+                rows="4"
+                placeholder="Todo Description"
+                oninput="descValid()"
+              ></textarea>
+              <p class="error d-none" id="descError">
+                Description must be at least 20 characters long
+              </p>
+            </div>
+            <button class="btn btn-primary" id="add" onclick="addTodo(event)">
+              Add
+            </button>
+            <div class="my-3">
+              <input
+                type="search"
+                id="search"
+                name="search"
+                class="form-control"
+                placeholder="Search by Title"
+                oninput="searchTodos()"
+              />
+            </div>
+            <div id="todoContainer" class="shadow-lg px-4 py-4 mt-5">
+              <h2 class="text-success">Your Todos:</h2>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
